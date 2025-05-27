@@ -1,25 +1,15 @@
 import { useState } from "react";
 
 
-function Incdre(){
-    const [value, setValue] = useState(0);
-
-    function Increment(){
-        setValue(value + 1);
-    }
-
-    function Decrement(){
-        if (value > 0){
-            setValue(value - 1);
-        }
-    }
+const Incdre = () => {
+    const [task, setTask] = useState(0);
 
     return(
         <div>
-            <h1>Increment And Decrement</h1><br/>
-            <input type="submit" value="Increment" onClick={Increment} />&nbsp;&nbsp;
-            <input type="submit" value="Decrement" onClick={Decrement} />&nbsp;&nbsp;
-            {value}
+            <h1>Increment and Decrement</h1><br/>
+            <button onClick={() => setTask(task + 1)}>Increment</button>&nbsp;&nbsp;
+            <button onClick={() => setTask(task > 0 ? task - 1 : 0)}>Decrement</button><br/>
+            {task}
         </div>
     );
 }
