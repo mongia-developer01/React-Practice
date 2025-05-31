@@ -14,8 +14,32 @@ import Dropdown from "./components/dropdown";
 import FormValidation from "./components/formvalidation";
 import TogglePassword from "./components/togglepassword";
 import ToggleParagraph from "./components/toggleparagraph";
+import LiveCharCount from "./components/livecharcount";
+import PersistForm from "./components/persistform";
+import TimerApp from "./components/timerapp";
+import MultiStepForm from "./components/multistepform";
+import Accordion from "./components/accordion";
+import Tabs from "./components/tabs";
+import ImageGallery from "./components/imagegallery";
+import ModalExample from "./components/modal";
 
 function App() {
+  const accordionData = [
+    { title: "Section 1", content: "Content 1" },
+    { title: "Section 2", content: "Content 2" }
+  ];
+
+  const tabsData = [
+    { label: "Tab 1", content: "Content 1" },
+    { label: "Tab 2", content: "Content 2" }
+  ];
+
+  const images = [
+    "https://via.placeholder.com/200",
+    "https://via.placeholder.com/201",
+    "https://via.placeholder.com/202"
+  ];
+
   return (
     <div>
       <BrowserRouter>
@@ -35,6 +59,14 @@ function App() {
           <Route path="/form-validation" element={<FormValidation />} />
           <Route path="/toggle-paragraph" element={<ToggleParagraph />} />
           <Route path="/toggle-password" element={<TogglePassword />} />
+          <Route path="/lcc" element={<LiveCharCount />} />
+          <Route path="/persist" element={<PersistForm />} />
+          <Route path="/timer" element={<TimerApp />} />
+          <Route path="/multi" element={<MultiStepForm />} />
+          <Route path="/accordion" element={<Accordion data={accordionData} />} />
+          <Route path="/tabs" element={<Tabs tabs={tabsData} />} />
+          <Route path="/gallery" element={<ImageGallery images={images} />} />
+          <Route path="/modal" element={<ModalExample />} />
         </Routes>
       </BrowserRouter>
     </div>
