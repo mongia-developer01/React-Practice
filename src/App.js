@@ -22,6 +22,10 @@ import Accordion from "./components/accordion";
 import Tabs from "./components/tabs";
 import ImageGallery from "./components/imagegallery";
 import ModalExample from "./components/modal";
+import { ThemeProvider } from "./components/themecontext";
+import ThemeToggle from "./components/themetoggle";
+import Table from "./components/table";
+import ImageUploadPreview from "./components/imageuploadpreview";
 
 function App() {
   const accordionData = [
@@ -38,6 +42,12 @@ function App() {
     "https://via.placeholder.com/200",
     "https://via.placeholder.com/201",
     "https://via.placeholder.com/202"
+  ];
+
+  const sampleData = [
+    { name: "Alice", email: "alice@example.com" },
+    { name: "Bob", email: "bob@example.com" },
+    { name: "Charlie", email: "charlie@example.com" },
   ];
 
   return (
@@ -67,6 +77,12 @@ function App() {
           <Route path="/tabs" element={<Tabs tabs={tabsData} />} />
           <Route path="/gallery" element={<ImageGallery images={images} />} />
           <Route path="/modal" element={<ModalExample />} />
+          <Route path="/tabs" element={<Tabs tabs={tabsData} />} />
+          <Route path="/gallery" element={<ImageGallery images={images} />} />
+          <Route path="/modal" element={<ModalExample />} />
+          <Route path="/tt" element={<ThemeToggle />} />
+          <Route path="/table" element={<Table data={sampleData} />} />
+          <Route path="/preview" element={<ImageUploadPreview />} />
         </Routes>
       </BrowserRouter>
     </div>
